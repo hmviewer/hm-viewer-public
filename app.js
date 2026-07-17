@@ -473,6 +473,12 @@ function renderAuthShell() {
   }
 }
 
+function requireAdminAction() {
+  if (isAdmin) return true;
+  alert("관리자만 사용할 수 있는 기능입니다.");
+  return false;
+}
+
 function showView(viewName) {
   if (currentUser?.mustChangePassword) {
     viewName = "account";
@@ -1250,10 +1256,12 @@ function bindEvents() {
   });
 
   $("#refreshHmButton").addEventListener("click", () => {
+    if (!requireAdminAction()) return;
     logClientAction("refresh_hm_server", state.season);
     refreshHmServerScores();
   });
   $("#earlyLeaveToggleButton").addEventListener("click", () => {
+    if (!requireAdminAction()) return;
     const round = $("#roundSelect").value || getRounds().at(-1);
     const enabled = !isEarlyLeaveRound(round);
     setEarlyLeaveRound(round, enabled);
@@ -1262,6 +1270,7 @@ function bindEvents() {
     refreshHmServerScores();
   });
   $("#finalRoundFullToggleButton").addEventListener("click", () => {
+    if (!requireAdminAction()) return;
     const round = $("#roundSelect").value || getRounds().at(-1);
     const enabled = !isFinalRoundFullRound(round);
     setFinalRoundFullRound(round, enabled);
@@ -1269,6 +1278,7 @@ function bindEvents() {
     render();
   });
   $("#syncHmScoresButton").addEventListener("click", () => {
+    if (!requireAdminAction()) return;
     const round = $("#roundSelect").value || getRounds().at(-1);
     if (!hasHmScoresForRound(round)) {
       alert(`${state.season} ${round} HM 서버 점수가 아직 없습니다. HM 서버에 해당 시즌 데이터가 올라온 뒤 갱신해주세요.`);
