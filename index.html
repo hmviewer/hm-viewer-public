@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>시즌 기여도 관리</title>
+    <title>ÏãúÏ¶å Í∏∞Ïó¨ÎèÑ Í¥ÄÎ¶¨</title>
     <link rel="stylesheet" href="./styles.css?v=26" />
   </head>
   <body>
@@ -11,19 +11,19 @@
       <form class="login-card" id="loginForm">
         <div>
           <p class="eyebrow">Season Board</p>
-          <h2>입장 로그인</h2>
+          <h2>ÏûÖÏû• Î°úÍ∑∏Ïù∏</h2>
         </div>
         <label class="field">
-          <span>아이디</span>
+          <span>ÏïÑÏù¥Îîî</span>
           <input id="loginUsernameInput" type="text" autocomplete="username" />
         </label>
         <label class="field">
-          <span>비밀번호</span>
+          <span>ÎπÑÎ∞ÄÎ≤àÌò∏</span>
           <input id="loginPasswordInput" class="password-input" type="password" autocomplete="current-password" inputmode="latin" pattern="[A-Za-z0-9]*" />
         </label>
-        <p class="caps-warning" data-caps-warning-for="loginPasswordInput">대문자가 켜져 있습니다.</p>
+        <p class="caps-warning" data-caps-warning-for="loginPasswordInput">ÎåÄÎ¨∏ÏûêÍ∞Ä ÏºúÏ†∏ ÏûàÏäµÎãàÎã§.</p>
         <p class="login-message" id="loginMessage"></p>
-        <button class="primary-button" type="submit">입장하기</button>
+        <button class="primary-button" type="submit">ÏûÖÏû•ÌïòÍ∏∞</button>
       </form>
     </section>
 
@@ -31,42 +31,42 @@
       <aside class="sidebar">
         <div>
           <p class="eyebrow">Contribution Board</p>
-          <h1>시즌 기여도 관리</h1>
+          <h1>ÏãúÏ¶å Í∏∞Ïó¨ÎèÑ Í¥ÄÎ¶¨</h1>
         </div>
 
-        <nav class="tabs" aria-label="화면 전환">
-          <button class="tab is-active" data-view="result">결과 보기</button>
-          <button class="tab admin-only" data-view="setup">시즌 설정</button>
-          <button class="tab admin-only" data-view="entry">점수 입력</button>
-          <button class="tab admin-only" data-view="history">기록</button>
-          <button class="tab admin-only" data-view="users">사용자 관리</button>
-          <button class="tab" data-view="account">내 계정</button>
+        <nav class="tabs" aria-label="ÌôîÎ©¥ Ï†ÑÌôò">
+          <button class="tab is-active" data-view="result">Í≤∞Í≥º Î≥¥Í∏∞</button>
+          <button class="tab admin-only" data-view="setup">ÏãúÏ¶å ÏÑ§Ï†ï</button>
+          <button class="tab admin-only" data-view="entry">Ï†êÏàò ÏûÖÎ†•</button>
+          <button class="tab admin-only" data-view="history">Í∏∞Î°ù</button>
+          <button class="tab admin-only" data-view="users">ÏÇ¨Ïö©Ïûê Í¥ÄÎ¶¨</button>
+          <button class="tab" data-view="account">ÎÇ¥ Í≥ÑÏ†ï</button>
         </nav>
 
         <div class="sidebar-footer">
           <p class="user-chip" id="currentUserLabel">-</p>
-          <button class="ghost-button" id="logoutButton">로그아웃</button>
-          <button class="ghost-button admin-only" id="saveSampleButton">샘플 불러오기</button>
-          <button class="danger-button admin-only" id="resetButton">전체 초기화</button>
+          <button class="ghost-button" id="logoutButton">Î°úÍ∑∏ÏïÑÏõÉ</button>
+          <button class="ghost-button admin-only" id="saveSampleButton">ÏÉòÌîå Î∂àÎü¨Ïò§Í∏∞</button>
+          <button class="danger-button admin-only" id="resetButton">Ï†ÑÏ≤¥ Ï¥àÍ∏∞Ìôî</button>
         </div>
       </aside>
 
       <main class="workspace">
         <section class="topbar">
           <div>
-            <p class="label">현재 시즌</p>
+            <p class="label">ÌòÑÏû¨ ÏãúÏ¶å</p>
             <select id="seasonSelect"></select>
           </div>
           <div>
-            <p class="label">멤버</p>
-            <strong id="memberCountLabel">0명</strong>
+            <p class="label">Î©§Î≤Ñ</p>
+            <strong id="memberCountLabel">0Î™Ö</strong>
           </div>
           <div>
-            <p class="label">누적 총점</p>
+            <p class="label">ÎàÑÏ†Å Ï¥ùÏ†ê</p>
             <strong id="totalScoreLabel">0</strong>
           </div>
           <div>
-            <p class="label">선택 회차</p>
+            <p class="label">ÏÑ†ÌÉù ÌöåÏ∞®</p>
             <select id="roundSelect"></select>
           </div>
         </section>
@@ -75,31 +75,31 @@
           <div class="section-heading">
             <div>
               <p class="eyebrow">Step 1</p>
-              <h2>시즌과 멤버를 먼저 잡기</h2>
+              <h2>ÏãúÏ¶åÍ≥º Î©§Î≤ÑÎ•º Î®ºÏ†Ä Ïû°Í∏∞</h2>
             </div>
             <div class="button-row">
-              <button class="secondary-button" id="addSeasonButton">새 시즌 만들기</button>
-              <button class="danger-button" id="deleteSeasonButton">현재 시즌 삭제</button>
-              <button class="primary-button" id="saveSetupButton">설정 저장</button>
+              <button class="secondary-button" id="addSeasonButton">ÏÉà ÏãúÏ¶å ÎßåÎì§Í∏∞</button>
+              <button class="danger-button" id="deleteSeasonButton">ÌòÑÏû¨ ÏãúÏ¶å ÏÇ≠Ï†ú</button>
+              <button class="primary-button" id="saveSetupButton">ÏÑ§Ï†ï Ï†ÄÏû•</button>
             </div>
           </div>
 
           <div class="setup-grid">
             <label class="field">
-              <span>시즌</span>
-              <input id="seasonInput" type="text" placeholder="예: 시즌5" />
+              <span>ÏãúÏ¶å</span>
+              <input id="seasonInput" type="text" placeholder="Ïòà: ÏãúÏ¶å5" />
             </label>
             <label class="field">
-              <span>회차 수</span>
+              <span>ÌöåÏ∞® Ïàò</span>
               <input id="roundCountInput" type="number" min="1" max="30" />
             </label>
           </div>
 
           <div class="table-toolbar">
-            <h3>직급 및 이름 입력</h3>
+            <h3>ÏßÅÍ∏â Î∞è Ïù¥Î¶Ñ ÏûÖÎ†•</h3>
             <div class="button-row">
-              <button class="secondary-button" id="importMembersButton">이전 시즌 멤버 불러오기</button>
-              <button class="secondary-button" id="addMemberButton">멤버 추가</button>
+              <button class="secondary-button" id="importMembersButton">Ïù¥Ï†Ñ ÏãúÏ¶å Î©§Î≤Ñ Î∂àÎü¨Ïò§Í∏∞</button>
+              <button class="secondary-button" id="addMemberButton">Î©§Î≤Ñ Ï∂îÍ∞Ä</button>
             </div>
           </div>
 
@@ -107,9 +107,9 @@
             <table class="mobile-card-table">
               <thead>
                 <tr>
-                  <th>기준 직급</th>
-                  <th>이름</th>
-                  <th>기본 기여도</th>
+                  <th>Í∏∞Ï§Ä ÏßÅÍ∏â</th>
+                  <th>Ïù¥Î¶Ñ</th>
+                  <th>Í∏∞Î≥∏ Í∏∞Ïó¨ÎèÑ</th>
                   <th></th>
                 </tr>
               </thead>
@@ -122,17 +122,17 @@
           <div class="section-heading">
             <div>
               <p class="eyebrow">Step 2</p>
-              <h2>회차별 점수 입력</h2>
+              <h2>ÌöåÏ∞®Î≥Ñ Ï†êÏàò ÏûÖÎ†•</h2>
             </div>
             <div class="button-row">
-              <button class="secondary-button" id="saveRoundEditsButton">수정 저장</button>
-              <button class="primary-button" id="applyRoundButton">반영하기</button>
+              <button class="secondary-button" id="saveRoundEditsButton">ÏàòÏ†ï Ï†ÄÏû•</button>
+              <button class="primary-button" id="applyRoundButton">Î∞òÏòÅÌïòÍ∏∞</button>
             </div>
           </div>
 
           <div class="entry-grid round-entry-grid">
             <label class="field">
-              <span>회차</span>
+              <span>ÌöåÏ∞®</span>
               <select id="scoreRoundSelect"></select>
             </label>
           </div>
@@ -141,13 +141,13 @@
             <table class="mobile-card-table">
               <thead>
                 <tr>
-                  <th>직급</th>
-                  <th>이름</th>
-                  <th class="number">현재 회차 점수</th>
-                  <th class="number">기본 점수 수정</th>
-                  <th class="number">추가 기여도</th>
-                  <th class="number">기본 점수 입력</th>
-                  <th>추가 사유</th>
+                  <th>ÏßÅÍ∏â</th>
+                  <th>Ïù¥Î¶Ñ</th>
+                  <th class="number">ÌòÑÏû¨ ÌöåÏ∞® Ï†êÏàò</th>
+                  <th class="number">Í∏∞Î≥∏ Ï†êÏàò ÏàòÏ†ï</th>
+                  <th class="number">Ï∂îÍ∞Ä Í∏∞Ïó¨ÎèÑ</th>
+                  <th class="number">Í∏∞Î≥∏ Ï†êÏàò ÏûÖÎ†•</th>
+                  <th>Ï∂îÍ∞Ä ÏÇ¨Ïú†</th>
                 </tr>
               </thead>
               <tbody id="roundEntryTableBody"></tbody>
@@ -155,21 +155,21 @@
           </div>
 
           <div class="quick-result">
-            <h3>이번 회차 결과</h3>
+            <h3>Ïù¥Î≤à ÌöåÏ∞® Í≤∞Í≥º</h3>
             <div class="table-wrap compact">
               <table class="result-table compact-result-table">
                 <thead>
                   <tr>
-                    <th>순위</th>
-                    <th>직급</th>
-                    <th>이름</th>
-                    <th class="number">선택 회차 점수</th>
-                    <th class="number">HM 서버 점수</th>
-                    <th class="number">누적 기여도 100%</th>
-                    <th class="number">기여도 70%</th>
-                    <th class="number">마지막 회차 가산</th>
-                    <th class="number">추가 기여도</th>
-                    <th class="number">위 기여도 차이</th>
+                    <th>ÏàúÏúÑ</th>
+                    <th>ÏßÅÍ∏â</th>
+                    <th>Ïù¥Î¶Ñ</th>
+                    <th class="number">ÏÑ†ÌÉù ÌöåÏ∞® Ï†êÏàò</th>
+                    <th class="number">HM ÏÑúÎ≤Ñ Ï†êÏàò</th>
+                    <th class="number">ÎàÑÏ†Å Í∏∞Ïó¨ÎèÑ 100%</th>
+                    <th class="number">Í∏∞Ïó¨ÎèÑ 70%</th>
+                    <th class="number">ÎßàÏßÄÎßâ ÌöåÏ∞® Í∞ÄÏÇ∞</th>
+                    <th class="number">Ï∂îÍ∞Ä Í∏∞Ïó¨ÎèÑ</th>
+                    <th class="number">ÏúÑ 70% Ï∞®Ïù¥</th>
                   </tr>
                 </thead>
                 <tbody id="entryPreviewBody"></tbody>
@@ -182,37 +182,37 @@
           <div class="section-heading">
             <div>
               <p class="eyebrow">Step 3</p>
-              <h2>회차 점수 결과</h2>
+              <h2>ÌöåÏ∞® Ï†êÏàò Í≤∞Í≥º</h2>
             </div>
             <div class="button-row">
-              <button class="secondary-button toggle-button admin-only" id="earlyLeaveToggleButton" type="button" aria-pressed="false">조기퇴근 전체반영</button>
-              <button class="secondary-button toggle-button admin-only" id="finalRoundFullToggleButton" type="button" aria-pressed="false">마지막 회차 100%</button>
-              <button class="secondary-button admin-only" id="refreshHmButton">HM 서버 갱신</button>
-              <button class="secondary-button admin-only" id="syncHmScoresButton">HM 점수 반영</button>
-              <button class="secondary-button" id="copyTextButton">텍스트 복사</button>
-              <button class="secondary-button" id="downloadExcelButton">엑셀 다운로드</button>
+              <button class="secondary-button toggle-button admin-only" id="earlyLeaveToggleButton" type="button" aria-pressed="false">Ï°∞Í∏∞Ìá¥Í∑º Ï†ÑÏ≤¥Î∞òÏòÅ</button>
+              <button class="secondary-button toggle-button admin-only" id="finalRoundFullToggleButton" type="button" aria-pressed="false">ÎßàÏßÄÎßâ ÌöåÏ∞® 100%</button>
+              <button class="secondary-button admin-only" id="refreshHmButton">HM ÏÑúÎ≤Ñ Í∞±Ïã†</button>
+              <button class="secondary-button admin-only" id="syncHmScoresButton">HM Ï†êÏàò Î∞òÏòÅ</button>
+              <button class="secondary-button" id="copyTextButton">ÌÖçÏä§Ìä∏ Î≥µÏÇ¨</button>
+              <button class="secondary-button" id="downloadExcelButton">ÏóëÏÖÄ Îã§Ïö¥Î°úÎìú</button>
             </div>
           </div>
-          <p class="sync-status" id="hmSyncStatus">HM 서버 점수는 퇴근전쟁이 끝난 이후 갱신 됩니다.</p>
+          <p class="sync-status" id="hmSyncStatus">HM ÏÑúÎ≤Ñ Ï†êÏàòÎäî Ìá¥Í∑ºÏ†ÑÏüÅÏù¥ ÎÅùÎÇú Ïù¥ÌõÑ Í∞±Ïã† Îê©ÎãàÎã§.</p>
 
           <div class="summary-row">
             <div>
-              <span>1위</span>
+              <span>1ÏúÑ</span>
               <strong id="leaderLabel">-</strong>
             </div>
             <div>
-              <span>1위 누적 점수</span>
+              <span>1ÏúÑ ÎàÑÏ†Å Ï†êÏàò</span>
               <strong id="leaderScoreLabel">0</strong>
             </div>
             <div>
-              <span>70% 기준</span>
+              <span>70% Í∏∞Ï§Ä</span>
               <strong id="leaderSeventyLabel">0</strong>
             </div>
           </div>
 
-          <div class="result-categories" aria-label="결과 보기 카테고리">
-            <button class="result-category is-active" data-result-panel="overall">전체 결과</button>
-            <button class="result-category" data-result-panel="member">멤버별 보기</button>
+          <div class="result-categories" aria-label="Í≤∞Í≥º Î≥¥Í∏∞ Ïπ¥ÌÖåÍ≥†Î¶¨">
+            <button class="result-category is-active" data-result-panel="overall">Ï†ÑÏ≤¥ Í≤∞Í≥º</button>
+            <button class="result-category" data-result-panel="member">Î©§Î≤ÑÎ≥Ñ Î≥¥Í∏∞</button>
           </div>
 
           <div class="result-panel is-active" id="overallResultPanel">
@@ -220,17 +220,17 @@
               <table class="result-table">
                 <thead>
                   <tr>
-                    <th>순위</th>
-                    <th>현재 직급</th>
-                    <th>기준 직급</th>
-                    <th>이름</th>
-                    <th class="number">선택 회차 점수</th>
-                    <th class="number">HM 서버 점수</th>
-                    <th class="number">누적 기여도 100%</th>
-                    <th class="number">기여도 70%</th>
-                    <th class="number">마지막 회차 가산</th>
-                    <th class="number">추가 기여도</th>
-                    <th class="number">위 기여도 차이</th>
+                    <th>ÏàúÏúÑ</th>
+                    <th>ÌòÑÏû¨ ÏßÅÍ∏â</th>
+                    <th>Í∏∞Ï§Ä ÏßÅÍ∏â</th>
+                    <th>Ïù¥Î¶Ñ</th>
+                    <th class="number">ÏÑ†ÌÉù ÌöåÏ∞® Ï†êÏàò</th>
+                    <th class="number">HM ÏÑúÎ≤Ñ Ï†êÏàò</th>
+                    <th class="number">ÎàÑÏ†Å Í∏∞Ïó¨ÎèÑ 100%</th>
+                    <th class="number">Í∏∞Ïó¨ÎèÑ 70%</th>
+                    <th class="number">ÎßàÏßÄÎßâ ÌöåÏ∞® Í∞ÄÏÇ∞</th>
+                    <th class="number">Ï∂îÍ∞Ä Í∏∞Ïó¨ÎèÑ</th>
+                    <th class="number">ÏúÑ 70% Ï∞®Ïù¥</th>
                   </tr>
                 </thead>
                 <tbody id="resultTableBody"></tbody>
@@ -243,9 +243,9 @@
           <div class="result-panel" id="memberResultPanel">
             <div class="member-detail">
               <div class="table-toolbar">
-                <h3>멤버별 보기</h3>
+                <h3>Î©§Î≤ÑÎ≥Ñ Î≥¥Í∏∞</h3>
                 <label class="field inline-field">
-                  <span>멤버 선택</span>
+                  <span>Î©§Î≤Ñ ÏÑ†ÌÉù</span>
                   <select id="memberDetailSelect"></select>
                 </label>
               </div>
@@ -254,14 +254,14 @@
                 <table class="mobile-card-table">
                   <thead>
                     <tr>
-                      <th>회차</th>
-                      <th class="number">회차 점수</th>
-                      <th class="number">HM 서버 점수</th>
-                      <th class="number">누적 기여도</th>
-                      <th class="number">기여도 70%</th>
-                      <th class="number">마지막 회차 가산</th>
-                      <th class="number">추가 기여도</th>
-                      <th>사유</th>
+                      <th>ÌöåÏ∞®</th>
+                      <th class="number">ÌöåÏ∞® Ï†êÏàò</th>
+                      <th class="number">HM ÏÑúÎ≤Ñ Ï†êÏàò</th>
+                      <th class="number">ÎàÑÏ†Å Í∏∞Ïó¨ÎèÑ</th>
+                      <th class="number">Í∏∞Ïó¨ÎèÑ 70%</th>
+                      <th class="number">ÎßàÏßÄÎßâ ÌöåÏ∞® Í∞ÄÏÇ∞</th>
+                      <th class="number">Ï∂îÍ∞Ä Í∏∞Ïó¨ÎèÑ</th>
+                      <th>ÏÇ¨Ïú†</th>
                     </tr>
                   </thead>
                   <tbody id="memberDetailBody"></tbody>
@@ -275,20 +275,20 @@
           <div class="section-heading">
             <div>
               <p class="eyebrow">Log</p>
-              <h2>입력 기록</h2>
+              <h2>ÏûÖÎ†• Í∏∞Î°ù</h2>
             </div>
-            <button class="secondary-button" id="downloadJsonButton">백업 다운로드</button>
+            <button class="secondary-button" id="downloadJsonButton">Î∞±ÏóÖ Îã§Ïö¥Î°úÎìú</button>
           </div>
 
           <div class="table-wrap">
             <table class="mobile-card-table">
               <thead>
                 <tr>
-                  <th>시간</th>
-                  <th>회차</th>
-                  <th>이름</th>
-                  <th>점수</th>
-                  <th>사유</th>
+                  <th>ÏãúÍ∞Ñ</th>
+                  <th>ÌöåÏ∞®</th>
+                  <th>Ïù¥Î¶Ñ</th>
+                  <th>Ï†êÏàò</th>
+                  <th>ÏÇ¨Ïú†</th>
                 </tr>
               </thead>
               <tbody id="historyTableBody"></tbody>
@@ -296,19 +296,19 @@
           </div>
 
           <div class="table-toolbar log-heading">
-            <h3>자동 백업</h3>
-            <button class="secondary-button" id="refreshBackupsButton">백업 새로고침</button>
+            <h3>ÏûêÎèô Î∞±ÏóÖ</h3>
+            <button class="secondary-button" id="refreshBackupsButton">Î∞±ÏóÖ ÏÉàÎ°úÍ≥†Ïπ®</button>
           </div>
           <p class="form-message" id="backupMessage"></p>
           <div class="table-wrap compact">
             <table class="mobile-card-table">
               <thead>
                 <tr>
-                  <th>시간</th>
-                  <th>작업자</th>
-                  <th>사유</th>
-                  <th>내용</th>
-                  <th>복구</th>
+                  <th>ÏãúÍ∞Ñ</th>
+                  <th>ÏûëÏóÖÏûê</th>
+                  <th>ÏÇ¨Ïú†</th>
+                  <th>ÎÇ¥Ïö©</th>
+                  <th>Î≥µÍµ¨</th>
                 </tr>
               </thead>
               <tbody id="backupTableBody"></tbody>
@@ -320,51 +320,51 @@
           <div class="section-heading">
             <div>
               <p class="eyebrow">Admin</p>
-              <h2>사용자 관리</h2>
+              <h2>ÏÇ¨Ïö©Ïûê Í¥ÄÎ¶¨</h2>
             </div>
-            <button class="secondary-button" id="refreshUsersButton">새로고침</button>
+            <button class="secondary-button" id="refreshUsersButton">ÏÉàÎ°úÍ≥†Ïπ®</button>
           </div>
 
           <div class="account-grid">
             <form class="panel-form" id="createUserForm">
-              <h3>아이디 생성</h3>
+              <h3>ÏïÑÏù¥Îîî ÏÉùÏÑ±</h3>
               <label class="field">
-                <span>아이디</span>
+                <span>ÏïÑÏù¥Îîî</span>
                 <input id="newUsernameInput" type="text" autocomplete="off" />
               </label>
               <label class="field">
-                <span>표시 이름</span>
+                <span>ÌëúÏãú Ïù¥Î¶Ñ</span>
                 <input id="newDisplayNameInput" type="text" autocomplete="off" />
               </label>
               <label class="field">
-                <span>초기 비밀번호</span>
+                <span>Ï¥àÍ∏∞ ÎπÑÎ∞ÄÎ≤àÌò∏</span>
                 <input id="newPasswordInput" class="password-input" type="password" autocomplete="new-password" inputmode="latin" pattern="[A-Za-z0-9]*" />
               </label>
-              <p class="caps-warning" data-caps-warning-for="newPasswordInput">대문자가 켜져 있습니다.</p>
+              <p class="caps-warning" data-caps-warning-for="newPasswordInput">ÎåÄÎ¨∏ÏûêÍ∞Ä ÏºúÏ†∏ ÏûàÏäµÎãàÎã§.</p>
               <label class="field">
-                <span>권한</span>
+                <span>Í∂åÌïú</span>
                 <select id="newRoleSelect">
-                  <option value="user">일반</option>
-                  <option value="admin">관리자</option>
+                  <option value="user">ÏùºÎ∞ò</option>
+                  <option value="admin">Í¥ÄÎ¶¨Ïûê</option>
                 </select>
               </label>
               <p class="form-message" id="createUserMessage"></p>
-              <button class="primary-button" type="submit">사용자 추가</button>
+              <button class="primary-button" type="submit">ÏÇ¨Ïö©Ïûê Ï∂îÍ∞Ä</button>
             </form>
 
             <div>
               <div class="table-toolbar">
-                <h3>사용자 목록</h3>
+                <h3>ÏÇ¨Ïö©Ïûê Î™©Î°ù</h3>
               </div>
               <div class="table-wrap compact">
                 <table class="mobile-card-table">
                   <thead>
                     <tr>
-                      <th>아이디</th>
-                      <th>이름</th>
-                      <th>권한</th>
-                      <th>생성일</th>
-                      <th>관리</th>
+                      <th>ÏïÑÏù¥Îîî</th>
+                      <th>Ïù¥Î¶Ñ</th>
+                      <th>Í∂åÌïú</th>
+                      <th>ÏÉùÏÑ±Ïùº</th>
+                      <th>Í¥ÄÎ¶¨</th>
                     </tr>
                   </thead>
                   <tbody id="usersTableBody"></tbody>
@@ -375,17 +375,17 @@
           </div>
 
           <div class="table-toolbar log-heading">
-            <h3>활동 로그</h3>
+            <h3>ÌôúÎèô Î°úÍ∑∏</h3>
           </div>
           <div class="table-wrap compact log-table-wrap">
             <table class="mobile-card-table">
               <thead>
                 <tr>
-                  <th>시간</th>
-                  <th>아이디</th>
-                  <th>이름</th>
-                  <th>동작</th>
-                  <th>상세</th>
+                  <th>ÏãúÍ∞Ñ</th>
+                  <th>ÏïÑÏù¥Îîî</th>
+                  <th>Ïù¥Î¶Ñ</th>
+                  <th>ÎèôÏûë</th>
+                  <th>ÏÉÅÏÑ∏</th>
                   <th>IP</th>
                 </tr>
               </thead>
@@ -398,29 +398,29 @@
           <div class="section-heading">
             <div>
               <p class="eyebrow">Account</p>
-              <h2>내 계정</h2>
+              <h2>ÎÇ¥ Í≥ÑÏ†ï</h2>
             </div>
           </div>
 
           <form class="panel-form slim-form" id="changePasswordForm">
-            <h3>비밀번호 변경</h3>
+            <h3>ÎπÑÎ∞ÄÎ≤àÌò∏ Î≥ÄÍ≤Ω</h3>
             <label class="field">
-              <span>현재 비밀번호</span>
+              <span>ÌòÑÏû¨ ÎπÑÎ∞ÄÎ≤àÌò∏</span>
               <input id="currentPasswordInput" class="password-input" type="password" autocomplete="current-password" inputmode="latin" pattern="[A-Za-z0-9]*" />
             </label>
-            <p class="caps-warning" data-caps-warning-for="currentPasswordInput">대문자가 켜져 있습니다.</p>
+            <p class="caps-warning" data-caps-warning-for="currentPasswordInput">ÎåÄÎ¨∏ÏûêÍ∞Ä ÏºúÏ†∏ ÏûàÏäµÎãàÎã§.</p>
             <label class="field">
-              <span>새 비밀번호</span>
+              <span>ÏÉà ÎπÑÎ∞ÄÎ≤àÌò∏</span>
               <input id="changePasswordInput" class="password-input" type="password" autocomplete="new-password" inputmode="latin" pattern="[A-Za-z0-9]*" />
             </label>
-            <p class="caps-warning" data-caps-warning-for="changePasswordInput">대문자가 켜져 있습니다.</p>
+            <p class="caps-warning" data-caps-warning-for="changePasswordInput">ÎåÄÎ¨∏ÏûêÍ∞Ä ÏºúÏ†∏ ÏûàÏäµÎãàÎã§.</p>
             <label class="field">
-              <span>새 비밀번호 확인</span>
+              <span>ÏÉà ÎπÑÎ∞ÄÎ≤àÌò∏ ÌôïÏù∏</span>
               <input id="confirmPasswordInput" class="password-input" type="password" autocomplete="new-password" inputmode="latin" pattern="[A-Za-z0-9]*" />
             </label>
-            <p class="caps-warning" data-caps-warning-for="confirmPasswordInput">대문자가 켜져 있습니다.</p>
+            <p class="caps-warning" data-caps-warning-for="confirmPasswordInput">ÎåÄÎ¨∏ÏûêÍ∞Ä ÏºúÏ†∏ ÏûàÏäµÎãàÎã§.</p>
             <p class="form-message" id="changePasswordMessage"></p>
-            <button class="primary-button" type="submit">비밀번호 변경</button>
+            <button class="primary-button" type="submit">ÎπÑÎ∞ÄÎ≤àÌò∏ Î≥ÄÍ≤Ω</button>
           </form>
         </section>
       </main>
