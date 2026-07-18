@@ -432,7 +432,7 @@ function getResults(round) {
       ...member,
       currentRank: ranks[index] || `순위 ${index + 1}`,
       rankNumber: index + 1,
-      gap: index === 0 ? null : list[index - 1].total - member.total,
+      gap: index === 0 ? null : list[index - 1].seventy - member.seventy,
     }));
 }
 
@@ -839,7 +839,7 @@ function resultRowsHtml(results, includeBaseRank = false) {
         <td class="number" data-label="70% 기준">${formatNumber(member.seventy)}</td>
         <td class="number final-round-bonus" data-label="마지막 회차 가산">${formatNumber(member.finalRoundBonus)}</td>
         <td class="number extra-score" data-label="추가 기여도">${member.extraContribution === null ? "-" : formatNumber(member.extraContribution)}</td>
-        <td class="number" data-label="위 차이">${member.gap === null ? "-" : formatNumber(member.gap)}</td>
+        <td class="number" data-label="위 70% 차이">${member.gap === null ? "-" : formatNumber(member.gap)}</td>
       </tr>
     `;
     })
@@ -876,7 +876,7 @@ function resultTotalRowHtml(results, includeBaseRank = false) {
       <td class="number total-value" data-label="70% 기준">${formatNumber(totals.seventy)}</td>
       <td class="number total-value final-round-bonus" data-label="마지막 회차 가산">${formatNumber(totals.finalRoundBonus)}</td>
       <td class="number total-value extra-score" data-label="추가 기여도">${formatNumber(totals.extraContribution)}</td>
-      <td class="number total-value" data-label="위 차이">-</td>
+      <td class="number total-value" data-label="위 70% 차이">-</td>
     </tr>
   `;
 }
@@ -889,7 +889,7 @@ function makeTextOutput(results) {
     const hmScore = member.hmServerScore === null ? "-" : formatNumber(member.hmServerScore);
     const extraContribution = member.extraContribution === null ? "-" : formatNumber(member.extraContribution);
     lines.push(
-      `${member.rankNumber}. ${member.currentRank} ${member.name} / 회차 ${formatNumber(member.roundScore)} / HM ${hmScore} / 누적 ${formatNumber(member.total)} / 70% ${formatNumber(member.seventy)} / 마지막가산 ${formatNumber(member.finalRoundBonus)} / 추가 ${extraContribution} / 차이 ${gap}`
+      `${member.rankNumber}. ${member.currentRank} ${member.name} / 회차 ${formatNumber(member.roundScore)} / HM ${hmScore} / 누적 ${formatNumber(member.total)} / 70% ${formatNumber(member.seventy)} / 마지막가산 ${formatNumber(member.finalRoundBonus)} / 추가 ${extraContribution} / 70%차이 ${gap}`
     );
   });
   return lines.join("\n");
@@ -1387,7 +1387,7 @@ function downloadExcel() {
   const round = $("#roundSelect").value || getRounds().at(-1);
   const results = getResults(round);
   const rows = [
-    ["순위", "현재 직급", "기준 직급", "이름", "선택 회차 점수", "HM 서버 점수", "누적 기여도 100%", "기여도 70%", "마지막 회차 가산", "추가 기여도", "위 기여도 차이"],
+    ["순위", "현재 직급", "기준 직급", "이름", "선택 회차 점수", "HM 서버 점수", "누적 기여도 100%", "기여도 70%", "마지막 회차 가산", "추가 기여도", "위 70% 차이"],
     ...results.map((member) => [
       member.rankNumber,
       member.currentRank,
