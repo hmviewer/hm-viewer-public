@@ -3,6 +3,7 @@ const hmApiBaseUrl = "https://asg-b2.onrender.com";
 const hmSeasonApiPaths = {
   5: "d",
   6: "b",
+  7: "d",
 };
 const hmMemberAliases = {
   이서냥: "서냥",
